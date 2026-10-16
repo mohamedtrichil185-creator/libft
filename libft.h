@@ -6,7 +6,7 @@
 /*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 12:13:25 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 12:29:53 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/16 11:06:55 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
 	/* this is the part 1 :*/
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

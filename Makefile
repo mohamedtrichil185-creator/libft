@@ -1,26 +1,22 @@
 NAME = libft.a
-PROGRAM = program
 
-SRC = $(filter-out main.c, $(wildcard *.c))
+SRC = $(wildcard *.c)
 OBJS =  $(SRC:.c=.o)
 
-MAIN = main.c
-MAIN_OBJS = $(MAIN:.c=.o)
-
-all : $(NAME) $(PROGRAM)
+all : $(NAME)
 
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-$(PROGRAM): $(MAIN_OBJS) $(NAME)
-	$(CC) $(CFLAGS) $(MAIN_OBJS) -L. -lft -o $(PROGRAM)
-
 %.o : %.c
 	cc -Wall -Wextra -Werror -Iincludes -c $< -o $@
+
 clean : 
-	rm -f $(OBJS) $(MAIN_OBJS)
+	rm -f $(OBJS)
+
 fclean : clean
-	rm -f $(NAME) $(PROGRAM)
+	rm -f $(NAME)
+
 re : fclean all
 
 .PHONY : all clean fclean re

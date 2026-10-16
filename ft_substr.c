@@ -6,19 +6,36 @@
 /*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 08:23:58 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 12:42:02 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/16 15:53:54 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*case_sp(size_t *len, const char *s)
+{
+	char	*p;
+
+	if (*len <= ft_strlen(s))
+		p = (char *)malloc(sizeof(char) * (*len));
+	else
+	{
+		*len = ft_strlen(s);
+		p = (char *)malloc(sizeof(char) * (*len));
+	}
+	return (p);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
 	size_t	i;
 
 	if (!s)
 		return (NULL);
-	p = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(len == start))
+		p = case_sp(&len, s);
+	else
+		p = (char *)malloc(sizeof(char) * (len + 1));
 	if (!p)
 		return (NULL);
 	i = 0;

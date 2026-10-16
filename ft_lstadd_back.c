@@ -6,7 +6,7 @@
 /*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 08:01:14 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 12:40:20 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/14 09:10:23 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	while (Node->next)
+	while (node->next)
 		node = node->next;
 	node->next = new;
 	new->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 08:00:51 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 12:39:13 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/16 18:37:34 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	get_size_of_number(int n)
 	int	i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		i++;
 	}
@@ -56,17 +56,3 @@ char	*ft_itoa(int n)
 	}
 	return (p);
 }
-/*int	main(void)
-{
-	int	nb1 = 0;
-	int	nb2 = -2147483648;
-	int	nb3 = 2147483647;
-
-	printf("nb1: %d; length: %zu\n", nb1, ft_intlen(nb1));
-	printf("nb2: %d; length: %zu\n", nb2, ft_intlen(nb2));
-	printf("nb3: %d; length: %zu\n", nb3, ft_intlen(nb3));
-
-	printf("string: %s\n",ft_itoa(nb1));
-	printf("string: %s\n",ft_itoa(nb2));
-	printf("string: %s\n",ft_itoa(nb3));
- }*/

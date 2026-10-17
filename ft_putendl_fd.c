@@ -6,7 +6,7 @@
 /*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 08:58:27 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 08:58:28 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:00:24 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_putendl_fd(char *str, int fd)
 {
 	while (*str)
 		write(fd, str++, 1);
-	write (1, "\n", 1);
+	write (fd, "\n", 1);
 }

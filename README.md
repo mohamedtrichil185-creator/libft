@@ -1,105 +1,61 @@
+*This project has been created as part of the 42 curriculum by mtraichl.*
+
 # Libft
 
-**My Libft project at 1337 Coding School | 42 Network**
+## Description
 
-## About the Project
+Libft is a project from the 42 curriculum. The goal is to create my own C library by writing functions that work like some standard C library functions.
 
-Libft is a foundational project in the 1337 curriculum. The goal is to build a personal C library by reimplementing standard C library functions and creating useful additional functions.
+This project helps me understand how C works, especially pointers, strings, memory management, and linked lists.
 
-This project helps develop a deeper understanding of C programming, pointers, memory management, strings, and data structures.
+The library can be used in other C projects, so I can reuse my functions instead of writing them again.
 
-The library can also be reused in future projects throughout the 1337 curriculum.
+## Instructions
 
-## Learning Objectives
+### Requirements
 
-- Understand how standard C library functions work.
-- Improve pointer manipulation and memory management skills.
-- Work with strings, arrays, and dynamically allocated memory.
-- Handle memory allocation and deallocation safely.
-- Implement and manipulate linked lists.
-- Write clean, readable, and reusable C code.
-- Practice compilation and project management with a Makefile.
+To compile this library, you need:
 
-## Project Contents
+- A C compiler, such as `cc`.
+- `make`.
+- A Unix-like operating system.
 
-The repository contains the following main components:
+### Compilation
 
-- **`libft.h`**: Header file containing function prototypes and required declarations.
-- **`ft_*.c`**: Source files containing the implementations of library functions.
-- **`Makefile`**: Rules for compiling the source files into a static library.
-
-## Function Categories
-
-The project covers several categories of C functions, depending on the implementations included in the repository.
-
-### 1. Character Checking and Conversion
-Functions for checking character types and converting letter case.
-
-Examples: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_toupper`, `ft_tolower`.
-
-### 2. Memory Management
-Functions for manipulating memory and allocating memory dynamically.
-
-Examples: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memcmp`, `ft_calloc`.
-
-### 3. String Manipulation
-Functions for measuring, searching, comparing, and modifying strings.
-
-Examples: `ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strdup`, `ft_substr`, `ft_strjoin`.
-
-### 4. Conversion and Output
-Functions for converting values and writing characters, strings, and numbers.
-
-Examples: `ft_atoi`, `ft_itoa`, `ft_putchar_fd`, `ft_putstr_fd`, `ft_putnbr_fd`.
-
-### 5. Linked Lists
-Additional functions for creating, traversing, and managing linked lists, when the bonus part is implemented.
-
-Examples: `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstclear`.
-
-*Note: These are examples of common Libft functions, not a claim that every listed function is already implemented in this repository.*
-
-## Compilation
-
-Clone the repository:
+Clone the repository and enter the project directory:
 
 ```bash
-git clone https://github.com/mohamedtrichil185-creator/libft.git
+git clone YOUR_REPOSITORY_URL
 cd libft
 ```
 
-Compile the library using the Makefile:
+Compile the library:
 
 ```bash
 make
 ```
 
-Common Makefile commands, if supported by the project:
+This creates a static library called `libft.a`.
 
-```bash
-make clean
-make fclean
-make re
-```
+### Makefile Commands
 
-- `make clean`: Removes object files.
-- `make fclean`: Removes object files and the compiled library.
-- `make re`: Rebuilds the library from scratch.
+- `make`: Compile the library.
+- `make clean`: Remove the object files.
+- `make fclean`: Remove the object files and the library.
+- `make re`: Clean and compile the library again.
 
-After a successful compilation, the static library is usually named `libft.a`.
+### How to Use the Library
 
-## How to Use the Library
-
-Include the header file in your C source code:
+First, include the header file in your C program:
 
 ```c
 #include "libft.h"
 ```
 
-Compile your program with the library:
+Then compile your program with the library:
 
 ```bash
-cc -Wall -Wextra -Werror main.c -L. -lft -o program
+cc main.c -L. -lft -I. -o program
 ```
 
 Run the program:
@@ -108,27 +64,99 @@ Run the program:
 ./program
 ```
 
-## What I Learned
+## Library Functions
 
-Through this project, I am developing my skills in:
+The library contains different groups of functions.
 
-- C programming fundamentals.
-- Pointers and memory addresses.
-- Dynamic memory allocation with `malloc` and `free`.
-- String and memory manipulation.
-- Debugging and handling edge cases.
-- Creating reusable libraries and organizing code.
+### 1. Character Functions
 
-## Repository
+These functions check characters or change their case.
 
-GitHub: [mohamedtrichil185-creator/libft](https://github.com/mohamedtrichil185-creator/libft)
+Examples:
+
+- `ft_isalpha`: Check if a character is a letter.
+- `ft_isdigit`: Check if a character is a digit.
+- `ft_isalnum`: Check if a character is a letter or a digit.
+- `ft_toupper`: Convert a lowercase letter to uppercase.
+- `ft_tolower`: Convert an uppercase letter to lowercase.
+
+### 2. String Functions
+
+These functions work with strings.
+
+Examples:
+
+- `ft_strlen`: Calculate the length of a string.
+- `ft_strlcpy`: Copy a string with a size limit.
+- `ft_strncmp`: Compare two strings.
+- `ft_strchr`: Find a character in a string.
+- `ft_strdup`: Create a copy of a string.
+- `ft_substr`: Create a part of a string.
+- `ft_strjoin`: Join two strings.
+- `ft_split`: Split a string using a separator.
+
+### 3. Memory Functions
+
+These functions work directly with memory.
+
+Examples:
+
+- `ft_memset`: Fill a memory area with a value.
+- `ft_bzero`: Set a memory area to zero.
+- `ft_memcpy`: Copy bytes from one memory area to another.
+- `ft_memmove`: Copy bytes safely when memory areas overlap.
+- `ft_memchr`: Search for a byte in a memory area.
+- `ft_memcmp`: Compare two memory areas.
+- `ft_calloc`: Allocate memory and initialize it to zero.
+
+### 4. Conversion and Output Functions
+
+These functions convert values or write data.
+
+Examples:
+
+- `ft_atoi`: Convert a string to an integer.
+- `ft_itoa`: Convert an integer to a string.
+- `ft_putchar_fd`: Write a character to a file descriptor.
+- `ft_putstr_fd`: Write a string to a file descriptor.
+- `ft_putendl_fd`: Write a string followed by a newline.
+- `ft_putnbr_fd`: Write an integer to a file descriptor.
+
+### 5. Linked-List Functions
+
+These functions help create and manage linked lists.
+
+Examples:
+
+- `ft_lstnew`: Create a new node.
+- `ft_lstadd_front`: Add a node at the beginning.
+- `ft_lstadd_back`: Add a node at the end.
+- `ft_lstsize`: Count the nodes.
+- `ft_lstlast`: Find the last node.
+- `ft_lstdelone`: Delete one node and its content.
+- `ft_lstclear`: Delete a list and its content.
+- `ft_lstiter`: Apply a function to each node.
+- `ft_lstmap`: Create a new list by applying a function to each node.
+
+*Note: This list must match the functions actually implemented in my library.*
+
+## Learning Approach
+
+My main way of learning during this project is peer learning. I learn by discussing problems with other students, sharing ideas, explaining my code, and learning from their approaches.
+
+I also use documentation and manual pages to understand how functions work.
+
+When I have difficulty understanding a concept, I use AI as an additional tool to get explanations, understand errors, and explore examples. My goal is to understand the logic and write code that I can explain myself.
+
+## Resources
+
+- C documentation: https://en.cppreference.com/w/c
+- Linux manual pages: https://man7.org/linux/man-pages/
+- GNU Make documentation: https://www.gnu.org/software/make/manual/
+- 42 School: https://42.fr/
 
 ## Author
 
-**Mohamed Traichil**
-
-Student at 1337 Coding School, Morocco.
-
----
-
-*This project is part of my journey to strengthen my C programming skills and build a solid foundation for future software engineering projects.*
+- **Login:** mtraichl
+- **School:** 1337
+- **Project:** Libft

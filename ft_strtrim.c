@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 12:11:52 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 12:12:00 by mtraichl         ###   ########.fr       */
+/*   Created: 2026/10/22 09:27:59 by mtraichl          #+#    #+#             */
+/*   Updated: 2026/10/22 09:28:01 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	is_inset(char c, char const *set)
+static int	is_inset(char c, char const *set)
 {
 	while (*set)
 	{
@@ -22,7 +23,9 @@ int	is_inset(char c, char const *set)
 	return (0);
 }
 
-void	get_bounds(char const *s, char const *set, size_t *start, size_t *end)
+/*get the bonds of the string*/
+
+static void	g(char const *s, char const *set, size_t *start, size_t *end)
 {
 	*start = 0;
 	while (s[*start] && is_inset(s[*start], set))
@@ -32,7 +35,7 @@ void	get_bounds(char const *s, char const *set, size_t *start, size_t *end)
 		(*end)--;
 }
 
-void	fill_string(size_t start, size_t end, char const *src, char *dst)
+static void	fill_string(size_t start, size_t end, char const *src, char *dst)
 {
 	size_t	i;
 
@@ -50,7 +53,7 @@ char	*ft_strtrim(char const *s, char const *set)
 
 	if (!s || !set)
 		return (NULL);
-	get_bounds(s, set, &start, &end);
+	g(s, set, &start, &end);
 	p = (char *)malloc(end - start + 1);
 	if (!p)
 		return (NULL);

@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 09:01:08 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 09:24:48 by mtraichl         ###   ########.fr       */
+/*   Created: 2026/10/22 09:24:09 by mtraichl          #+#    #+#             */
+/*   Updated: 2026/10/22 09:24:10 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	is_sep(char c, char sep)
+static int	is_sep(char c, char sep)
 {
 	if (c == sep)
 		return (1);
 	return (0);
 }
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	count;
 
@@ -37,7 +38,7 @@ int	count_word(char const *s, char c)
 	return (count);
 }
 
-int	count_char(char const *s, char c)
+static int	count_char(char const *s, char c)
 {
 	int	count;
 
@@ -52,7 +53,7 @@ int	count_char(char const *s, char c)
 	return (count);
 }
 
-void	copy_word(char *s, char const **as, char c)
+static void	copy_word(char *s, char const **as, char c)
 {
 	while (**as && is_sep(**as, c))
 		(*as)++;

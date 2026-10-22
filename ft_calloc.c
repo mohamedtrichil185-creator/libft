@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 08:24:03 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 11:08:42 by mtraichl         ###   ########.fr       */
+/*   Created: 2026/10/22 09:12:33 by mtraichl          #+#    #+#             */
+/*   Updated: 2026/10/22 09:12:35 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
+#include "libft.h"
+/*This tells us that the largest safe number of elements max / nmemb*/
+/*i meant nmemb > SIZE_MAX / size */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*s;
 	unsigned char	*p;
 	size_t			total_bytes;
+	size_t			max;
 
+	max = (size_t) - 1;
 	if (!nmemb || !size)
 	{
 		s = (void *)malloc(1);
@@ -24,7 +28,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 			return (NULL);
 		return (s);
 	}
-	if (nmemb > SIZE_MAX / size)
+	if (nmemb > max / size)
 		return (NULL);
 	total_bytes = size * nmemb;
 	s = (void *)malloc(total_bytes);

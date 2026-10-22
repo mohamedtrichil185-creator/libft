@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 08:01:56 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/13 08:02:04 by mtraichl         ###   ########.fr       */
+/*   Created: 2026/10/22 09:16:51 by mtraichl          #+#    #+#             */
+/*   Updated: 2026/10/22 09:16:54 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*p;
 
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

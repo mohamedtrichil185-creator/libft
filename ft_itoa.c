@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtraichl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 08:00:51 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/16 18:37:34 by mtraichl         ###   ########.fr       */
+/*   Created: 2026/10/22 09:15:13 by mtraichl          #+#    #+#             */
+/*   Updated: 2026/10/22 09:15:17 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size_of_number(int n)
+static int	get_size_of_number(int n)
 {
 	int	i;
 

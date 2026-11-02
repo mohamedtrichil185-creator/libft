@@ -6,7 +6,7 @@
 /*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 09:21:27 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/22 09:21:32 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/24 20:23:06 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*p;
-	const unsigned char	*p1;
+	char		*p;
+	const char	*p1;
 
-	p = (unsigned char *)dest;
-	p1 = (const unsigned char *)src;
-	if (dest == src)
+	p = (char *)dest;
+	p1 = (const char *)src;
+	if (dest == src || !n)
 		return (dest);
 	if (p > p1)
 	{

@@ -30,15 +30,10 @@ char	*ft_strdup(const char *s)
 	size_t	src_len;
 	char	*arr;
 
-	if (!s)
-		return (NULL);
-	src_len = 0;
-	while (s[src_len])
-		src_len++;
-	src_len++;
+	src_len = ft_strlen(s) + 1;
 	arr = (char *)malloc(sizeof(char) * src_len);
 	if (!arr)
-		return (0);
+		return (NULL);
 	arr = ft_strcpy(arr, s);
 	return (arr);
 }

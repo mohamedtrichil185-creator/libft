@@ -6,7 +6,7 @@
 /*   By: mtraichl <mtraichl@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 09:11:54 by mtraichl          #+#    #+#             */
-/*   Updated: 2026/10/22 09:11:55 by mtraichl         ###   ########.fr       */
+/*   Updated: 2026/10/23 07:54:36 by mtraichl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
+	char	*p;
 
-	p = (unsigned char *)s;
+	p = (char *)s;
 	while (n--)
 		*p++ = 0;
 }
